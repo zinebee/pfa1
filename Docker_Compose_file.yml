@@ -1,0 +1,36 @@
+version: "3"
+services:
+     mymongodb :
+                   image : mongo
+                   container_name: mymongodb
+                   ports :
+                          - "27018:27018"
+                   environment :
+                         - MONGO_INITDB_ROOT_USERNAME=admin
+                         - MONGO_INITDB_ROOT_PASSWORD=pass
+     mymongodb-express:
+                    image : mongo-express
+                    container_name: mymongo-express
+                    ports :
+                           - "8084:8084"
+                    environment :
+                           - ME_CONFIG_MONGODB_AUTH_USERNAME=admin
+                           - ME_CONFIG_MONGODB_AUTH_PASSWORD=pass
+                           - ME_CONFIG_MONGODB_SERVER=mymongo
+                           - ME_CONFIG_MONGODB_PORT=27017
+                           - ME_CONFIG_MONGODB_DATABASE=mydatabase
+                    depends_on:
+                           - mymongodbb
+     web:
+         build : .
+         ports :
+                          - "8080:8080"
+         depends_on :
+                          - mymongodb
+                          - mymongodb-express
+         environment :
+                         LOCALHOST_URI : http://localhost:8083/tableaus
+                         REALM: FamousarttrApplication
+                         
+                          
+                          
