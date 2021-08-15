@@ -11,18 +11,15 @@ pipeline{
                 sh "echo 'bonjour dans votre site de pfa'"
             }
         }
-    }
-    stage('message simple2'){
+        stage('message simple2'){
             steps{
                 sh "echo 'rebonjour'"
             }
         }
-    }
-    stage('message simple3'){
+        stage('message simple3'){
             steps{
                 sh "echo 'mouna zineb'"
             }
         }
+        }
     }
-    
-}
