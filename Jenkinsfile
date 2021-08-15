@@ -18,4 +18,11 @@ pipeline{
             }
         }
     }
+    stage('message simple3'){
+            steps{
+                sh "echo 'mouna zineb'"
+            }
+        }
+    }
+    
 }
