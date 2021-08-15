@@ -98,7 +98,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<FinalName>pfa1</FinalName>
+	  <finalName>pfa1</finalName>
 	</build>
 
 </project>
