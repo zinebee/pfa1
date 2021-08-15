@@ -8,7 +8,13 @@ pipeline{
         }
         stage('message simple'){
             steps{
-                sh "echo 'bonjour dans votre site'"
+                sh "echo 'bonjour dans votre site de pfa'"
+            }
+        }
+    }
+    stage('message simple2'){
+            steps{
+                sh "echo 'rebonjour'"
             }
         }
     }
