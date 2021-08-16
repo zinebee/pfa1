@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class accauil {
 	@RequestMapping("/Acceuil")
  public String afficher() {
-	 return "Bienvenue dans votre site";
+	 return "Bienvenue dans votre site 2";
  }
 }
 
