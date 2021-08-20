@@ -35,8 +35,9 @@ export default class Categorie extends React.Component {
        
     render() { 
         return(
-            <Card className={"border border-dark bg-dark text-white"}><Card.Header>
-               Ajouter Voiture
+            <Card className={"bg-light text-dark"}>
+                <Card.Header>
+               Ajouter Categorie
                 </Card.Header>
                 <Card.Body>
                     <Form onSubmit={this.submitCategorie} id="CategorieFormId">
@@ -44,7 +45,7 @@ export default class Categorie extends React.Component {
                             <Form.Label>Ajouter une nouvelle categorie</Form.Label>
                             <Form.Control name="categoriee" type="text" className={"bg-dark text-white"} placeholder="Entrez Une Nouvelle Categorie" onChange={this.categorieChange}/>
                             </Form.Group>
-                        <Button size="sm" variant="success" type="submit">Valider</Button>
+                        <Button size="sm" variant="success" type="submit" className={"bg-info"}>Valider</Button>
                     </Form>
                 </Card.Body>
                 </Card>);

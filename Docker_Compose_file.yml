@@ -1,36 +1,39 @@
-version: "3"
+version: "3.9"
 services:
-     mymongodb :
-                   image : mongo
-                   container_name: mymongodb
+  mymariadb :
+                   image : mariadb
+                   container_name: mymariadb
+                   hostname : localhost
                    ports :
-                          - "27018:27018"
+                          - "33078:3306"
+                   expose:
+                         - 33078
                    environment :
-                         - MONGO_INITDB_ROOT_USERNAME=admin
-                         - MONGO_INITDB_ROOT_PASSWORD=pass
-     mymongodb-express:
-                    image : mongo-express
-                    container_name: mymongo-express
-                    ports :
-                           - "8084:8084"
-                    environment :
-                           - ME_CONFIG_MONGODB_AUTH_USERNAME=admin
-                           - ME_CONFIG_MONGODB_AUTH_PASSWORD=pass
-                           - ME_CONFIG_MONGODB_SERVER=mymongo
-                           - ME_CONFIG_MONGODB_PORT=27017
-                           - ME_CONFIG_MONGODB_DATABASE=mydatabase
-                    depends_on:
-                           - mymongodbb
-     web:
+                          - MARIADB_ROOT_PASSWORD=root1234ROOT
+                          - MARIADB_ROOT_USER=root
+                          - MARIADB_DATABASE=pfaproject1
+                          - MYSQL_ROOT_PASSWORD=root1234ROOT
+                          - MYSQL_ROOT_USER=root
+                          - MARIADB_TCP_PORT=33078
+                          - MYSQL_TCP_PORT=3306
+                          - MARIADB_DATABASE=pfa1project1
+  web:
          build : .
+         command: cd src/main/resources/webapp/reactjs ;npm start
          ports :
-                          - "8080:8080"
+                          - "8089:8089"
          depends_on :
-                          - mymongodb
-                          - mymongodb-express
+                          - mymariadb
          environment :
-                         LOCALHOST_URI : http://localhost:8083/tableaus
-                         REALM: FamousarttrApplication
+                         LOCALHOST_URI : http://localhost:8080/categories
+                         REALM: Pfa1Application
+                        
                          
+networks:
+  generator:
+        driver: bridge
+        ipam:
+          config:
+           - subnet: 127.0.0.1/8                         
                           
                           

@@ -29,11 +29,11 @@ private String prenom;
 private String email;
 @NonNull
 private String telephone;
-@ManyToOne(fetch=FetchType.LAZY)
-@JoinColumn(name="categorie")
-private categorie categorie;
-public personne() {}
-public personne(String nom,String prenom,String email,String telephone,categorie c) {
+@NonNull
+private String categorie;
+
+
+public personne(String nom,String prenom,String email,String telephone,String c) {
 	this.nom=nom;
 	this.prenom=prenom;
 	this.email=email;
@@ -46,6 +46,9 @@ public personne(personne p){
 	this.email=p.getEmail();
 	this.telephone=p.getTelephone();
 	}
+public personne() {
+	
+}
 public long getId() {
 	return id;
 }
@@ -76,10 +79,10 @@ public String getTelephone() {
 public void setTelephone(String telephone) {
 	this.telephone = telephone;
 }
-public categorie getCategorie() {
+public String getCategorie() {
 	return categorie;
 }
-public void setCategorie(categorie categorie) {
+public void setCategorie(String categorie) {
 	this.categorie = categorie;
 }
 }

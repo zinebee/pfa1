@@ -9,6 +9,8 @@ import Bienvenue from './Components/Bienvenue';
 import Footer from './Components/Footer';
 import Categorie from './Components/Categorie';
 import CategorieListe from './Components/CategorieListe';
+import PersonneListe from './Components/PersonneListe';
+import ClientListe from './Components/ClientListe';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';  
 import { tsConstructorType } from '@babel/types';
 export default class App extends React.Component{
@@ -29,21 +31,27 @@ export default class App extends React.Component{
       //  <CategorieListe/>render(){
        const marginTop = { marginTop:"20px"};
        return (
-          
+         
       // <div className="App"><Jumbotron className="bg-dark text-white"> </Jumbotron>
       <Router>
+        
        <NavigationBar/><Container>
          <Row>
          <Col lg={12} style = {marginTop} ><Switch> 
            
-           <Route path="/" exact component={Bienvenue}/> <Route path="/add" exact component={Categorie}/><Route path="/categories" exact component={CategorieListe}/> </Switch>
+           <Route path="/" exact component={Bienvenue}/> <Route path="/ajoutercategorie" exact component={Categorie}/><Route path="/categories" exact component={CategorieListe}/> 
+           <Route path="/listedesmembres" exact component={PersonneListe}/>
+           <Route path="/listedesclients" exact component={ClientListe}/>
+           </Switch>
            </Col></Row></Container>
             
-         <Footer/>
+         
+         
          </Router>
+         
       // </div>
    );
-    // };
+    // <Footer/>};
      
  }
   }

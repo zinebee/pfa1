@@ -25,8 +25,8 @@ private String categoriee;
 public categorie() {
 	
 }
-public categorie(String categoriee) {
-	this.categoriee=categoriee;
+public categorie(String categor) {
+	this.categoriee=categor;
 }
 public long getId() {
 	return id;

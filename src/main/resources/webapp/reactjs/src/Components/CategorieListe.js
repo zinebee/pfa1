@@ -33,13 +33,10 @@ export default class CategorieListe extends Component {
                 <div style={{"display":this.state.show ? "block" : "none"}}>
                     <MyToast children={{show:this.state.show,message:"Categorie supprimee avec succes."}}/>
                 </div>
-             <Card className={"border border-dark bg-dark text-white"}>
-                 <Card.Header>Liste des Categories</Card.Header>
-                 <Card.Body>
-                     <Table bordered hover striped variant="dark">
+                     <Table bordered hover striped variant="light">
                          <thead>
                              <tr align="center">
-                                 <th>Id du Categorie</th>
+                                 
                                  <th>Categorie</th>
                                  <th>Supprimer</th>
                              </tr>
@@ -48,11 +45,11 @@ export default class CategorieListe extends Component {
                              { 
                                 this.state.categories.length===0 ?
                              <tr align="center">
-                                 <td>{this.state.categories.length}disponible</td>
+                                 <td colSpan="3">{this.state.categories.length}disponible</td>
                              </tr>:
                              this.state.categories.map((categorie) => (
                                  <tr key={categorie.id}>
-                                     <td>{categorie.id}</td>
+                                     
                                      <td>{categorie.categoriee}</td>
                                      <td>
                                          <ButtonGroup>
@@ -64,8 +61,6 @@ export default class CategorieListe extends Component {
                              }
                          </tbody>
                      </Table>
-                 </Card.Body>
-             </Card>
              </div>
         );
             }} 
