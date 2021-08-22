@@ -1,6 +1,5 @@
 package org.pfa.service;
 
-import org.pfa.modele.categorie;
 import org.pfa.modele.client;
 import org.pfa.modele.clientRepo;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,5 @@
 package org.pfa.service;
 
-import org.pfa.modele.categorie;
 import org.pfa.modele.categorieRepo;
 import org.pfa.modele.personne;
 import org.pfa.modele.personneRepo;

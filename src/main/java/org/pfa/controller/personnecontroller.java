@@ -29,10 +29,14 @@ public class personnecontroller {
 		return personneservicee.getpersonne();
 	    
 	}
-	@RequestMapping(method=RequestMethod.POST,value="/personnes/{personne}")
-	public void ajoutercategorie(@RequestBody personne personne1,@PathVariable String personne) {
+	@RequestMapping(method=RequestMethod.POST,value="/personnes/ajout")
+	public void ajoutercategorie(@RequestBody personne personne1) {
 		//categorie1.setCategoriee(personne);
 		personneservicee.Ajouterpersonne(personne1);
+	}
+	@RequestMapping(method=RequestMethod.GET,value="/personnes/{id}")
+	public Optional<personne> getpersonnebyid(@PathVariable long id){
+		return personnerepo.findById(id);
 	}
 	@RequestMapping(method=RequestMethod.DELETE,value="/personnes/{id}")
 	public void Supprimercategorie(@PathVariable long id) {

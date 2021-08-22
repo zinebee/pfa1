@@ -1,5 +1,7 @@
 package org.pfa.controller;
 
+import java.util.Optional;
+
 import org.pfa.modele.categorie;
 import org.pfa.modele.categorieRepo;
 import org.pfa.service.categorieservice;
@@ -30,6 +32,10 @@ public class categoriecontroller {
 	public void ajoutercategorie(@RequestBody categorie categorie1,@PathVariable String categorie) {
 		categorie1.setCategoriee(categorie);
 		categorieservicee.Ajoutercategorie(categorie1);
+	}
+	@RequestMapping(method=RequestMethod.GET,value="/categories/{id}")
+	public Optional<categorie> getcategoriebyid(@PathVariable long id){
+		return categorierepo.findById(id);
 	}
 	@RequestMapping(method=RequestMethod.DELETE,value="/categories/{id}")
 	public void Supprimercategorie(@PathVariable long id) {

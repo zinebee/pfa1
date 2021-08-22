@@ -13,6 +13,8 @@ import PersonneListe from './Components/PersonneListe';
 import ClientListe from './Components/ClientListe';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';  
 import { tsConstructorType } from '@babel/types';
+import personne from './Components/personne';
+import  Client from './Components/Client';
 export default class App extends React.Component{
   //constructor(props){
    //  super(props);
@@ -42,6 +44,8 @@ export default class App extends React.Component{
            <Route path="/" exact component={Bienvenue}/> <Route path="/ajoutercategorie" exact component={Categorie}/><Route path="/categories" exact component={CategorieListe}/> 
            <Route path="/listedesmembres" exact component={PersonneListe}/>
            <Route path="/listedesclients" exact component={ClientListe}/>
+           <Route path="/ajouterpersonne" exact component={personne}/>
+           <Route path="/ajouterclient" exact component={Client}/>
            </Switch>
            </Col></Row></Container>
             
