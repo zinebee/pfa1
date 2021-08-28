@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{Component} from 'react'; 
 import {Card, Form,Button, Col} from 'react-bootstrap';
+import NavigationBar from './NavigationBar';
 export default class personne extends React.Component { 
     constructor(props){
         super(props);
@@ -15,7 +16,8 @@ export default class personne extends React.Component {
             email:'',
             nom:'',
             prenom:'',
-            telephone:''
+            telephone:'',
+            password:''
 
         };
         submitpersonne = event =>{
@@ -24,11 +26,15 @@ export default class personne extends React.Component {
            email:this.state.email,
            nom:this.state.nom,
            prenom:this.state.prenom,
-           telephone:this.state.telephone
+           telephone:this.state.telephone,
+           password:this.state.password
        };
        axios.post("http://localhost:8080/personnes/ajout",personne).then(response =>{
-                //if(response.data != null){
-                  //  }
+                if(response.data == "Ajoute"){
+                    alert(response.data);
+                    event.preventDefault();
+                    window.location="/lesservices";
+                    }
             });
     }
        personneChange= event =>{
@@ -44,6 +50,8 @@ export default class personne extends React.Component {
        
     render() { 
         return(
+            <div>
+                
             <Card className={"bg-light text-dark"}>
                 <Card.Header>
                Insription des membres
@@ -61,11 +69,14 @@ export default class personne extends React.Component {
                             <Form.Control name="email" type="text" className={"bg-dark text-white"} placeholder="Entrez un email" onChange={this.personneChange}/>
                             <Form.Label>Telephone</Form.Label>
                             <Form.Control name="telephone" type="text" className={"bg-dark text-white"} placeholder="Entrez un numero de telephone" onChange={this.personneChange}/>
+                            <Form.Label>Mot De Passe</Form.Label>
+                            <Form.Control name="password" type="password" className={"bg-dark text-white"} placeholder="Entrez un mot de passe" onChange={this.personneChange}/>
                            
                             </Form.Group>
                         <Button size="sm" variant="success" type="submit" className={"bg-info"}>Valider</Button>
                     </Form>
                 </Card.Body>
-                </Card>);
+                </Card>
+                </div>);
         }} 
     

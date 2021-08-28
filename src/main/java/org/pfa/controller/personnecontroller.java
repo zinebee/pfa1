@@ -2,6 +2,7 @@ package org.pfa.controller;
 
 import org.pfa.modele.categorie;
 import org.pfa.modele.categorieRepo;
+import org.pfa.modele.client;
 import org.pfa.modele.personne;
 import org.pfa.modele.personneRepo;
 import org.pfa.service.categorieservice;
@@ -30,9 +31,10 @@ public class personnecontroller {
 	    
 	}
 	@RequestMapping(method=RequestMethod.POST,value="/personnes/ajout")
-	public void ajoutercategorie(@RequestBody personne personne1) {
+	public String ajoutercategorie(@RequestBody personne personne1) {
 		//categorie1.setCategoriee(personne);
 		personneservicee.Ajouterpersonne(personne1);
+		return "Ajoute";
 	}
 	@RequestMapping(method=RequestMethod.GET,value="/personnes/{id}")
 	public Optional<personne> getpersonnebyid(@PathVariable long id){
@@ -41,6 +43,28 @@ public class personnecontroller {
 	@RequestMapping(method=RequestMethod.DELETE,value="/personnes/{id}")
 	public void Supprimercategorie(@PathVariable long id) {
 		personneservicee.Supprimerpersonne(id);
+	}
+	@RequestMapping(method=RequestMethod.GET,value="/personnes/t/{categorie}")
+	public List<personne> trouver(@PathVariable String categorie) {
+		List<personne> liste=personnerepo.findByCategorie(categorie);
+		if(liste.isEmpty()) {
+			return null;
+		}else {
+			return liste;
+		}
+		
+		
+	}
+	@RequestMapping(method=RequestMethod.GET,value="/personnes/{password}/{email}")
+	public String  authentificationpersonne(@PathVariable String password,@PathVariable String email) {
+		List<personne> liste=personnerepo.findByPasswordAndEmail(password,email);
+		if(liste.isEmpty()) {
+			return "non trouve";
+		}else {
+			return "trouve";
+		}
+		
+		
 	}
 	
 }

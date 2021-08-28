@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'; 
 import {Component} from 'react';
 import MyToast from './MyToast';
+import NavigationBar from './NavigationBar';
 import { Card,Table,ButtonGroup,Button } from 'react-bootstrap';
 export default class PersonneListe extends Component { 
     constructor(props){
@@ -29,7 +30,9 @@ export default class PersonneListe extends Component {
     };
     render() { 
         return(
+           
             <div>
+                 <NavigationBar/>
                 <div style={{"display":this.state.show ? "block" : "none"}}>
                     <MyToast children={{show:this.state.show,message:"Membre supprimee avec succes."}}/>
                 </div>

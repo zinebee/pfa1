@@ -31,9 +31,9 @@ private String email;
 private String telephone;
 @NonNull
 private String categorie;
+private String password;
 
-
-public personne(String nom,String prenom,String email,String telephone,String c) {
+public personne(String nom,String prenom,String email,String telephone,String c,String password) {
 	this.nom=nom;
 	this.prenom=prenom;
 	this.email=email;
@@ -84,5 +84,11 @@ public String getCategorie() {
 }
 public void setCategorie(String categorie) {
 	this.categorie = categorie;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
 }
 }

@@ -26,15 +26,15 @@ private clientRepo repository2;
 	@Bean
 	CommandLineRunner runner() {
 		return args->{
-			categorie a=new categorie("nourriture");
-			categorie b=new categorie("bricolage");
-			categorie c=new categorie("etude");
+			categorie a=new categorie("a");
+			categorie b=new categorie("b");
+			categorie c=new categorie("c");
 			repository.save(a);
 			repository.save(b);
 			repository.save(c);
-			repository1.save(new personne("Ali","Haasan","ali.hassan@gmail.com","0611223344","a"));
-			repository1.save(new personne("Ali1","Haasan1","ali.hassan1@gmail.com","0611223345","a"));
-			repository1.save(new personne("Ali2","Haasan2","ali.hassan2@gmail.com","0611223346","b"));
+			repository1.save(new personne("Ali","Haasan","ali.hassan@gmail.com","0611223344","a","ali"));
+			repository1.save(new personne("Ali1","Haasan1","ali.hassan1@gmail.com","0611223345","c","ali"));
+			repository1.save(new personne("Ali2","Haasan2","ali.hassan2@gmail.com","0611223346","b","ali"));
 			repository2.save(new client("zineb","mouna","0611111111","zineb_mouna@gmail.com"," "));
 			repository2.save(new client("zineb1","mouna1","0611111112","zineb_mouna1@gmail.com"," 1"));
 			repository2.save(new client("zineb2","mouna2","0611111113","zineb_mouna2@gmail.com"," 2"));
