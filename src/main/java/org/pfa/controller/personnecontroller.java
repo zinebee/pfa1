@@ -56,15 +56,27 @@ public class personnecontroller {
 		
 	}
 	@RequestMapping(method=RequestMethod.GET,value="/personnes/{password}/{email}")
-	public String  authentificationpersonne(@PathVariable String password,@PathVariable String email) {
+	public long authentificationpersonne(@PathVariable String password,@PathVariable String email) {
 		List<personne> liste=personnerepo.findByPasswordAndEmail(password,email);
 		if(liste.isEmpty()) {
-			return "non trouve";
+			return 0;
 		}else {
-			return "trouve";
+			return liste.get(0).getId();
 		}
 		
 		
+	}
+	@RequestMapping(method=RequestMethod.PUT,value="/personnes/m/{id}")
+	public void modifierpersonne(@RequestBody personne personnes,@PathVariable long id ) {
+		personne d=new personne();
+		//d.setId(id);
+		d.setCategorie(personnes.getCategorie());
+		d.setEmail(personnes.getEmail());
+		d.setNom(personnes.getNom());
+		d.setPrenom(personnes.getPrenom());
+		d.setPassword(personnes.getPassword());
+		d.setTelephone(personnes.getTelephone());
+		personneservicee.Modifierpersonne(personnes,id);
 	}
 	
 }

@@ -24,6 +24,8 @@ import afficherparcategorie from './Components/afficherparcategorie';
 import './index.css';
 import MenuPersonne from './Components/MenuPersonne';
 import service from './Components/service';
+import modifiermembre from './Components/modifiermembre';
+import modifierclient from './Components/modifierclient';
 export default class App extends React.Component{
   //constructor(props){
    //  super(props);
@@ -69,6 +71,8 @@ export default class App extends React.Component{
            <Route path="/afficher" exact component={afficherparcategorie}/>
            <Route path="/lesservices" exact component={MenuPersonne}/>
            <Route path="/ajouterservices" exact component={service}/>
+           <Route path="/modifierprofilmembre" exact component={modifiermembre}/>
+           <Route path="/modifierprofilclient" exact component={modifierclient}/>
            </Switch>
            </Col></Row></Container>
             

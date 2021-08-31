@@ -272,7 +272,7 @@ class Bienvenue extends React.Component {
           <ul class="sous">
             <li><a href="/ajoutercategorie">Cours HTML et CSS</a></li>
             <li><a href="/listemembres">Cours JavaScript</a></li>
-            <li><a href="/authadmin">connexion admin</a></li>
+            <li><a href="/authadmin">Connexion admin</a></li>
           </ul>
         </li>
         <li><a href="/authadmin">Espace Admin &ensp;</a>
@@ -281,13 +281,14 @@ class Bienvenue extends React.Component {
         <li class="deroulant"><a href="#">Espace client &ensp;</a>
         <ul class="sous">
             <li><a href="/connexionclient">Se connecter</a></li>
-            <li><a href="/ajouterclient">s'inscrire</a></li>
+            <li><a href="/ajouterclient">S'inscrire</a></li>
+            <li><a href="/modifierprofilclient">Profil</a></li>
           </ul>
         </li>
         <li class="deroulant"><a href="#">Espace Membre &ensp;</a>
         <ul class="sous">
             <li><a href="/connexionpersonne">Se connecter</a></li>
-            <li><a href="/ajouterpersonne">s'inscrire</a></li>
+            <li><a href="/ajouterpersonne">S'inscrire</a></li>
           </ul>
         </li>
       </ul>

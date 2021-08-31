@@ -24,10 +24,11 @@ export default class connexionpersonne extends React.Component {
        };
    var res=" ";
        axios.get("http://localhost:8080/personnes/"+this.state.password+"/"+this.state.email,connexionpersonne).then(response => {
-           alert(response.data);
-           if(response.data == "trouve"){
+          // alert(response.data);
+           if(response.data != 0 ){
                alert("connexion reussi");
-               
+               sessionStorage.setItem("idpersonne",response.data);
+               //alert(sessionStorage.getItem("idpersonne"));
                window.location="/lesservices";
            }else{
                alert("connexion echoue");

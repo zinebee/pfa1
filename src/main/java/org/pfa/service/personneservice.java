@@ -4,6 +4,7 @@ import org.pfa.modele.categorieRepo;
 import org.pfa.modele.personne;
 import org.pfa.modele.personneRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import java.util.*;
 @Service
@@ -22,7 +23,8 @@ public class personneservice {
 	public void Supprimerpersonne(long id) {
 		personnerepo.deleteById(id);
 	}
-	public void Modifierpersonne(personne c) {
+	public void Modifierpersonne(personne c,long id) {
 		personnerepo.save(c);
 	}
+	
 }

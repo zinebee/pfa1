@@ -23,13 +23,15 @@ export default class Connexionclient extends React.Component {
            
        };
    var res=" ";
+   
        axios.get("http://localhost:8080/clients/"+this.state.password+"/"+this.state.email,connexionclient).then(response => {
            alert(response.data);
-           if(response.data == "trouve"){
+           if(response.data != 0 ){
                alert(" connexion reussi");
+               sessionStorage.setItem("idclient",response.data);
               // alert("connexion reussi");
            //    event.preventDefault();
-              window.location="/?nn=Bonjour"+this.state.email;
+             window.location="/?nn=Bonjour"+this.state.email;
            }else{
                alert("connexion echoue");
            //    event.preventDefault();
