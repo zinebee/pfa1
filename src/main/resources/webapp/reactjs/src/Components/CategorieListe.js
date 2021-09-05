@@ -3,6 +3,8 @@ import React from 'react';
 import {Component} from 'react';
 import MyToast from './MyToast';
 import { Card,Table,ButtonGroup,Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+
 export default class CategorieListe extends Component { 
     constructor(props){
         super(props);
@@ -33,34 +35,28 @@ export default class CategorieListe extends Component {
                 <div style={{"display":this.state.show ? "block" : "none"}}>
                     <MyToast children={{show:this.state.show,message:"Categorie supprimee avec succes."}}/>
                 </div>
-                     <Table bordered hover striped variant="light">
-                         <thead>
-                             <tr align="center">
-                                 
-                                 <th>Categorie</th>
-                                 <th>Supprimer</th>
-                             </tr>
-                         </thead>
-                         <tbody>
+
                              { 
                                 this.state.categories.length===0 ?
-                             <tr align="center">
-                                 <td colSpan="3">{this.state.categories.length}disponible</td>
-                             </tr>:
+							this.state.categories.length + 'disponible'
+                            :
                              this.state.categories.map((categorie) => (
-                                 <tr key={categorie.id}>
-                                     
-                                     <td>{categorie.categoriee}</td>
-                                     <td>
-                                         <ButtonGroup>
-                                             <Button size="sm" variant="outline-danger" onClick={this.deleteCategorie.bind(this,categorie.id)}>Supprimer</Button>
-                                         </ButtonGroup>
-                                     </td>
-                                 </tr>
+							
+   							<div class="img-container col-md-4">      
+   							<div class="cat-item">
+                             	<Link to="./ServiceListe.js">
+                             	<img src={`../images/categories/`+ categorie.categoriee+ `.jpeg`} alt="Italian Trulli" class="categorie-image" height="250px" width="350px"/>
+                             	</Link>
+                             	<div class="cat-info">
+                             	     <p>{categorie.categoriee}</p>
+
+                             	</div>
+                             </div>	
+							</div>
+
                              ))
                              }
-                         </tbody>
-                     </Table>
+
              </div>
         );
             }} 

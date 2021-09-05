@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  mymariadb :
+                   image : mariadb
+                   container_name: mymariadb
+                   hostname : localhost
+                   ports :
+                          - "33078:3306"
+                   expose:
+                         - 33078
+                   environment :
+                          - MARIADB_ROOT_PASSWORD=root1234ROOT
+                          - MARIADB_ROOT_USER=root
+                          - MARIADB_DATABASE=pfaproject1
+                          - MYSQL_ROOT_PASSWORD=root1234ROOT
+                          - MYSQL_ROOT_USER=root
+                          - MARIADB_TCP_PORT=33078
+                          - MYSQL_TCP_PORT=3306
+                          - MARIADB_DATABASE=pfa1project1
+  web:
+         build : .
+         command: cd src/main/resources/webapp/reactjs ;npm start
+         ports :
+                          - "8089:8089"
+         depends_on :
+                          - mymariadb
+         environment :
+                         LOCALHOST_URI : http://localhost:8080/categories
+                         REALM: Pfa1Application
+                        
+                         
+networks:
+  generator:
+        driver: bridge
+        ipam:
+          config:
+           - subnet: 127.0.0.1/8                         
+                          
+                          

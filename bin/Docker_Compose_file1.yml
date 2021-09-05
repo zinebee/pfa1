@@ -1,0 +1,41 @@
+version: '3.9'
+services:
+ db:
+    image: mariadb
+    ports:
+      - "3305:3305"
+    restart: always
+    environment:
+      MYSQL_DATABASE: pfaproject1
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root1234ROOT
+      MYSQL_ROOT_PASSWORD: root1234ROOT
+    networks:
+      - my_app
+ app-server:
+    build : .
+    ports:
+      - "8080:8080" 
+    depends_on: 
+      - db 
+    environment: 
+      SPRING_DATASOURCE_URL: jdbc:mariadb://db:3306/pfaproject1
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root1234ROOT   
+      LOCALHOST_URI : http://localhost:8080/personnes
+      REALM: Pfa1Application
+    networks:
+      - my_app
+ app-client:
+    image: "reactjs:2"
+    ports:
+      - "3000:3000" 
+    stdin_open: true
+    depends_on:
+      - app-server
+      - db
+    networks:
+      - my_app
+networks:
+    my_app:
+       driver: bridge
