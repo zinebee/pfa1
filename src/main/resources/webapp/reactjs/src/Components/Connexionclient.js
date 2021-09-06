@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{Component} from 'react'; 
 import {Card, Form,Button, Col} from 'react-bootstrap';
+import Footer from './Footer';
 export default class Connexionclient extends React.Component { 
     constructor(props){
         super(props);
@@ -76,6 +77,7 @@ export default class Connexionclient extends React.Component {
        
     render() { 
         return(
+           <div>
             <Card className={"bg-light text-dark"}>
                 <Card.Header>
                Se connecter
@@ -91,5 +93,9 @@ export default class Connexionclient extends React.Component {
                         <Button size="sm" variant="success" type="submit" className={"bg-info"}>se connecter</Button>
                     </Form>
                 </Card.Body>
-                </Card>);
+                
+                </Card>
+                
+                </div>
+                );
         }} 

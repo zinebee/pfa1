@@ -15,6 +15,7 @@ import { fn } from 'jquery';
 import jQuery from 'jquery';
 import { useEffect } from 'react';
 import './Decorsite/js/jquery-3.4.1.min.js';
+import Footer from './Footer';
 class Bienvenue extends React.Component { 
     
     render() { 
@@ -299,7 +300,7 @@ class Bienvenue extends React.Component {
       <img src="r.jpeg"/>
     </div>
     
-
+<Footer/>
 
 </div>
 

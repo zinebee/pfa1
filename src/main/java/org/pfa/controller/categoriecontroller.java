@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import org.pfa.modele.categorie;
 import org.pfa.modele.categorieRepo;
+import org.pfa.modele.personne;
+import org.pfa.modele.personneRepo;
 import org.pfa.service.categorieservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,9 +22,14 @@ public class categoriecontroller {
 	private categorieservice categorieservicee;
 	@Autowired
 	private categorieRepo categorierepo;
+	@Autowired
+	private personneRepo personnerepo;
 	@RequestMapping("/Acceuil")
  public String afficher() {
-	 return "Bienvenue dans votre site 2 zineb mouna";
+		long id=492;
+		personne q=personnerepo.findById(id).get();
+		String dd=q.getCategorie();
+	 return "Bienvenue dans votre site 2 zineb mouna\n"+dd;
  }
 	@RequestMapping("/categories")
 	public Iterable<categorie> getCategories(){

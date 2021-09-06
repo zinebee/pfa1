@@ -4,26 +4,24 @@ import {Component} from 'react';
 import MyToast from './MyToast';
 import { Card,Table,ButtonGroup,Button } from 'react-bootstrap';
 import NavigationBar from './NavigationBar';
-export default class CategorieListe extends Component { 
+import MenuPersonne from './MenuPersonne';
+export default class serviceliste1 extends Component { 
     constructor(props){
         super(props);
         this.state={
-            categories: []
+            services: []
         }
        
     }
     
     componentDidMount(){
-        if(sessionStorage.getItem("idadmin") ==null){
-            window.location="/connexionadmin";
+        axios.get("http://localhost:8080/personnes/"+sessionStorage.getItem("idpersonne")+"/services").then(response => response.data).then((data)=>{this.setState({services:data})});
     }
-        axios.get("http://localhost:8080/categories").then(response => response.data).then((data)=>{this.setState({categories:data})});
-    }
-    deleteCategorie=(categorieId) =>{
-         axios.delete("http://localhost:8080/categories/"+categorieId).then(response =>{
+    deleteService=(serviceId) =>{
+         axios.delete("http://localhost:8080/ourservices/"+serviceId).then(response =>{
              if(response.data != null){
                 // alert("Categorie supprimee avec succes");
-                this.setState({ categories:this.state.categories.filter(categorie => categorie.id!==categorieId)});
+                this.setState({ services:this.state.services.filter(service => service.id!==serviceId)});
                 this.setState({"show":true});
                    setTimeout(()=> this.setState({"show":false}),3000);
             }else{
@@ -47,42 +45,41 @@ export default class CategorieListe extends Component {
            }
         })
    };
-  render() { 
+    render() { 
         //document.getElementById("etal").innerHTML="";
         return(
             <div>
-                <NavigationBar/>
+                <MenuPersonne/>
                 <div style={{"display":this.state.show ? "block" : "none"}}>
-                    <MyToast children={{show:this.state.show,message:"Categorie supprimee avec succes."}}/>
+                    <MyToast children={{show:this.state.show,message:"service supprimee avec succes."}}/>
                 </div>
                      <Table bordered hover striped variant="light">
                          <thead>
                              <tr align="center">
                                  
-                                 <th>Categorie</th>
+                                 <th>service</th>
+                                 <th>Description service</th>
                                  <th>Supprimer</th>
-                                 <th>Consulter</th>
+                                 
                              </tr>
                          </thead>
                          <tbody>
                              { 
-                                this.state.categories.length===0 ?
+                                this.state.services.length===0 ?
                              <tr align="center">
-                                 <td colSpan="3">{this.state.categories.length}disponible</td>
+                                 <td colSpan="3">{this.state.services.length}disponible</td>
                              </tr>:
-                             this.state.categories.map((categorie) => (
-                                 <tr key={categorie.id}>
+                             this.state.services.map((service) => (
+                                 <tr key={service.id}>
                                      
-                                     <td>{categorie.categoriee}</td>
+                                     <td>{service.categorie}</td>
+                                     <td>{service.description}</td>
                                      <td>
                                          <ButtonGroup>
-                                             <Button size="sm" variant="outline-danger" onClick={this.deleteCategorie.bind(this,categorie.id)}>Supprimer</Button>
+                                             <Button size="sm" variant="outline-danger" onClick={this.deleteService.bind(this,service.id)}>Supprimer</Button>
                                          </ButtonGroup>
                                      </td>
-                                     <td>
-                                         <ButtonGroup>
-                                             <Button size="sm" variant="outline-danger" onClick={this.consulterCategorie.bind(this,categorie.categoriee)}>Consulter</Button>
-                                         </ButtonGroup></td>
+                                    
                                  </tr>
                              ))
                              }

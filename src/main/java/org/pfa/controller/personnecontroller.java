@@ -68,14 +68,14 @@ public class personnecontroller {
 	}
 	@RequestMapping(method=RequestMethod.PUT,value="/personnes/m/{id}")
 	public void modifierpersonne(@RequestBody personne personnes,@PathVariable long id ) {
-		personne d=new personne();
+		//personne d=new personne();
 		//d.setId(id);
-		d.setCategorie(personnes.getCategorie());
+		/*d.setCategorie(personnes.getCategorie());
 		d.setEmail(personnes.getEmail());
 		d.setNom(personnes.getNom());
 		d.setPrenom(personnes.getPrenom());
 		d.setPassword(personnes.getPassword());
-		d.setTelephone(personnes.getTelephone());
+		d.setTelephone(personnes.getTelephone());*/
 		personneservicee.Modifierpersonne(personnes,id);
 	}
 	

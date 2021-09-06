@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React, { useEffect } from 'react';
-import { Alert } from 'react-bootstrap';
+import { Alert, Navbar } from 'react-bootstrap';
 import NavigationBar from './Components/NavigationBar'
 import './App.css';
 import {Container,Row,Col,Jumbotron} from 'react-bootstrap';
@@ -26,6 +26,9 @@ import MenuPersonne from './Components/MenuPersonne';
 import service from './Components/service';
 import modifiermembre from './Components/modifiermembre';
 import modifierclient from './Components/modifierclient';
+import serviceliste1 from './Components/serviceliste1';
+import serviceliste2 from './Components/serviceliste2';
+import afficherpersonne from './Components/afficherpersonne';
 export default class App extends React.Component{
   //constructor(props){
    //  super(props);
@@ -51,6 +54,8 @@ export default class App extends React.Component{
        return (
          
       // <div className="App"><Jumbotron className="bg-dark text-white"> </Jumbotron>
+      <div className="App">
+
       <Router>
             
        <Container>
@@ -73,14 +78,19 @@ export default class App extends React.Component{
            <Route path="/ajouterservices" exact component={service}/>
            <Route path="/modifierprofilmembre" exact component={modifiermembre}/>
            <Route path="/modifierprofilclient" exact component={modifierclient}/>
+           <Route path="/listedesservices1" exact component={serviceliste1}/>
+           <Route path="/listeservicesadmin" exact component={serviceliste2}/>
+           <Route path="/afficherpersonnes" exact component={afficherpersonne}/>
            </Switch>
-           </Col></Row></Container>
-            
-         
+           </Col></Row>
+           
+           </Container>
+           
+        
          
          </Router>
-         
-      // </div>
+       
+       </div>
    );
     // <Footer/>};
      

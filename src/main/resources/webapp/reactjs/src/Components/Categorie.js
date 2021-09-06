@@ -33,7 +33,11 @@ export default class Categorie extends React.Component {
        componentDidUpdate(){
            
         }
-       
+       componentDidMount(){
+           if(sessionStorage.getItem("idadmin") ==null){
+                   window.location="/connexionadmin";
+           }
+       }
     render() { 
         return(
 

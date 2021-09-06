@@ -1,5 +1,7 @@
 package org.pfa.modele;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,12 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-
+import java.util.*;
 @Entity
 @Data
 @RequiredArgsConstructor
@@ -32,6 +39,10 @@ private String telephone;
 @NonNull
 private String categorie;
 private String password;
+@JsonIgnore
+@OneToMany( targetEntity=service.class, mappedBy="personnee" )
+private List<service> services = new ArrayList<>();
+
 
 public personne(String nom,String prenom,String email,String telephone,String c,String password) {
 	this.nom=nom;
@@ -90,5 +101,11 @@ public String getPassword() {
 }
 public void setPassword(String password) {
 	this.password = password;
+}
+public List<service> getServices() {
+	return services;
+}
+public void setServices(List<service> services) {
+	this.services = services;
 }
 }

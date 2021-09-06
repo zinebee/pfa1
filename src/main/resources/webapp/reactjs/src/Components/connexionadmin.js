@@ -30,6 +30,7 @@ if(this.state.username === "admin123" && this.state.password === "admin123nimda"
         
         if(res === 1){
             alert("connexion reussi");
+            sessionStorage.setItem("idadmin","admin123");
             event.preventDefault();
             window.location="categories";
             

@@ -28,9 +28,9 @@ class MenuPersonne extends React.Component {
                     
                   </li>
                   <li><a href="/modifierprofilmembre">Modifier le profile &ensp;</a>
-                    
+                 
                   </li>
-                  
+                  <li><a href="/listedesservices1">Liste des services &ensp;</a> </li>
                 </ul>
               </nav>
               

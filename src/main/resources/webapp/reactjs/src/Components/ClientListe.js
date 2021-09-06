@@ -14,6 +14,11 @@ export default class ClientListe extends Component {
     }
     
     componentDidMount(){
+        
+            if(sessionStorage.getItem("idadmin") ==null){
+                    window.location="/connexionadmin";
+            }
+      
         axios.get("http://localhost:8080/clients").then(response => response.data).then((data)=>{this.setState({clients:data})});
     }
     deleteClient=(clientId) =>{
