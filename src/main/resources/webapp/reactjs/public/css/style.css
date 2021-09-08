@@ -8401,3 +8401,152 @@ margin-left:0px;
 
 
 }
+
+#serbiskomlogocont{
+	width:140%;
+	margin-left:-200px;
+	/*margin-right:500px;*/
+	padding-left:200px;
+	/*padding-right:200px;*/
+	background-color:rgb(248, 213, 167);
+		vertical-align: top;
+    display: inline-block;
+    padding-top:35px;
+    padding-bottom:35px;
+
+}
+
+#serbiskomlogo{
+	width:40%;
+	float:left;
+
+	
+}
+
+#serbiskomlogodescription{
+		/*word-wrap: break-word;*/
+
+	width:50%;
+	float:left;
+}
+
+#serbiskomlogodescription h1{
+	color:rgb(29, 73, 77);
+	    line-height: calc(1em + 8px);
+	font-family: sharp sans en,sharp sans accents,sharp sans symbols,sharp sans,Arial,sans-serif;
+}
+
+#lalahalima{
+	width:92%;
+}
+
+#lalahalima h1{
+	font-size: 1.5rem;
+	font-weight: 700;
+	color:rgb(29, 73, 77);
+font-family: sharp sans en,sharp sans accents,sharp sans symbols,sharp sans,Arial,sans-serif;
+margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: calc(1em + 8px);}
+
+
+#serbiskomlogodescription p{
+font-size: 1.25rem;
+}
+
+#lalahalima p{
+font-size: 1.25rem;
+word-wrap: break-word;
+display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+color: #17494d;
+line-height: 1.5em;    
+}
+
+#mynavtest{
+	margin-left:-130px;
+	width:130%;
+}
+
+
+#travailindependantcont{
+	width:140%;
+	margin-left:-200px;
+	/*margin-right:500px;*/
+	padding-left:200px;
+	/*padding-right:200px;*/
+	background-color:#f8f9f9;
+		vertical-align: top;
+    display: inline-block;
+    padding-top:35px;
+    padding-bottom:35px;
+
+}
+
+#travailindependantlogo{
+	width:40%;
+	float:left;
+
+	
+}
+
+#travailindependantdescription{
+		/*word-wrap: break-word;*/
+	padding-right:20px;
+	width:50%;
+	float:left;
+}
+
+#travailindependantdescription h1{
+	color:rgb(29, 73, 77);
+	    line-height: calc(1em + 8px);
+	font-family: sharp sans en,sharp sans accents,sharp sans symbols,sharp sans,Arial,sans-serif;
+}
+
+#travailindependantdescription p{
+font-size: 1.25rem;
+}
+
+#mariamknittingcont{
+	width:140%;
+	margin-left:-200px;
+	/*margin-right:500px;*/
+	padding-left:200px;
+	/*padding-right:200px;*/
+	background-color:white;
+		vertical-align: top;
+    display: inline-block;
+    padding-top:35px;
+    padding-bottom:35px;
+
+}
+
+#mariamknittinglogo{
+	width:40%;
+	float:left;
+
+	
+}
+
+#mariamknittingdescription{
+		/*word-wrap: break-word;*/
+
+	width:50%;
+	float:left;
+}
+
+#mariamknittingdescription h1{
+	color:rgb(29, 73, 77);
+	    line-height: calc(1em + 8px);
+	font-family: sharp sans en,sharp sans accents,sharp sans symbols,sharp sans,Arial,sans-serif;
+}
+
+#mariamknittingdescription p{
+font-size: 1.25rem;
+}

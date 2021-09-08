@@ -3,6 +3,7 @@ import React from 'react';
 import {Component} from 'react';
 import MyToast from './MyToast';
 import { Card,Table,ButtonGroup,Button } from 'react-bootstrap';
+import NavigationBar from './NavigationBar';
 export default class ClientListe extends Component { 
     constructor(props){
         super(props);
@@ -28,8 +29,10 @@ export default class ClientListe extends Component {
          })
     };
     render() { 
+       // document.getElementById("etal").innerHTML="";
         return(
             <div>
+                <NavigationBar/>
                 <div style={{"display":this.state.show ? "block" : "none"}}>
                     <MyToast children={{show:this.state.show,message:"Client supprimee avec succes."}}/>
                 </div>

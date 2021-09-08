@@ -11,6 +11,7 @@ class NavigationBar extends React.Component {
         <div>
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'></link>
 <link rel="stylesheet" href="../../public/css/style.css"/>
+<link rel="stylesheet" href="/css/style.css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 <link href="../../public/scss/style.scss"></link>
 <link href="../scss/bootstrap"></link>
@@ -26,14 +27,13 @@ class NavigationBar extends React.Component {
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav m-auto">
-	        	<li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="/" class="nav-link"><br/>Home</a></li>
 	        	
 	        	<li class="nav-item"><a href="ajoutercategorie" class="nav-link">Ajouter categorie</a></li>
 	        	<li class="nav-item"><a href="categories" class="nav-link">Liste categorie</a></li>
 	        	<li class="nav-item"><a href="listedesmembres" class="nav-link">Liste des  Membres</a></li>
 	          <li class="nav-item"><a href="listedesclients" class="nav-link">Liste des  Clients</a></li>
-			  <li class="nav-item"><a href="ajouterpersonne" class="nav-link">Ajouter personne</a></li>
-			  <li class="nav-item"><a href="ajouterclient" class="nav-link">Ajouter client</a></li>
+			  
 	        </ul>
 	      </div>
 	    </div>

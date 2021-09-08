@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{Component} from 'react'; 
 import {Card, Form,Button, Col} from 'react-bootstrap';
+import NavigationBar from './NavigationBar';
 export default class Client extends React.Component { 
     constructor(props){
         super(props);
@@ -43,7 +44,11 @@ export default class Client extends React.Component {
         }
        
     render() { 
+        //document.getElementById("etal").innerHTML="";
         return(
+            
+            <div>
+               
             <Card className={"bg-light text-dark"}>
                 <Card.Header>
                Insription des clients
@@ -66,6 +71,6 @@ export default class Client extends React.Component {
                         <Button size="sm" variant="success" type="submit" className={"bg-info"}>Valider</Button>
                     </Form>
                 </Card.Body>
-                </Card>);
+                </Card>
+                </div>);
         }} 
-    

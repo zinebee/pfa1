@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.util.*;
 @RestController
 @CrossOrigin(origins="http://localhost:3000")
 public class clientcontroller {
@@ -31,5 +31,26 @@ public void Supprimerclient(@PathVariable long id) {
 public void ajouterclient(@RequestBody client client1) {
 	//categorie1.setCategoriee(personne);
 	clientservicee.Ajouterclient(client1);
+}
+@RequestMapping(method=RequestMethod.GET,value="/clients/{password}/{email}")
+public long  authentification(@PathVariable String password,@PathVariable String email) {
+	List<client> liste=clientrepo.findByPasswordAndEmail(password,email);
+	if(liste.isEmpty()) {
+		return 0;
+	}else {
+		return liste.get(0).getId_client();
+	}
+	
+	
+}
+@RequestMapping(method=RequestMethod.PUT,value="/clients/m/{id}")
+public void modifierpersonne(@RequestBody client client,@PathVariable long id ) {
+	
+	
+	clientservicee.Modifierclient(client,id);
+}
+@RequestMapping(method=RequestMethod.GET,value="/clients/{id}")
+public Optional<client> getpersonnebyid(@PathVariable long id){
+	return clientrepo.findById(id);
 }
 }

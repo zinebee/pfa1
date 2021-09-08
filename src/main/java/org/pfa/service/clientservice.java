@@ -15,7 +15,8 @@ public class clientservice {
 	public void Supprimerclient(long id) {
 		clientrepo.deleteById(id);
 	}
-	public void Modifierclient(client c) {
+	public void Modifierclient(client c,long id) {
 		clientrepo.save(c);
 	}
+	
 }

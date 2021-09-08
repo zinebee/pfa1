@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Alert } from 'react-bootstrap';
 import NavigationBar from './Components/NavigationBar'
 import './App.css';
@@ -15,6 +15,17 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { tsConstructorType } from '@babel/types';
 import personne from './Components/personne';
 import  Client from './Components/Client';
+import Connexionclient from './Components/Connexionclient';
+import connexionpersonne from './Components/connexionpersonne';
+import connexionadmin from './Components/connexionadmin';
+import Echecconnexion from './Components/Echecconnexion';
+import affichermenuu from './Components/affichermenuu';
+import afficherparcategorie from './Components/afficherparcategorie';
+import './index.css';
+import MenuPersonne from './Components/MenuPersonne';
+import service from './Components/service';
+import modifiermembre from './Components/modifiermembre';
+import modifierclient from './Components/modifierclient';
 export default class App extends React.Component{
   //constructor(props){
    //  super(props);
@@ -29,23 +40,40 @@ export default class App extends React.Component{
       event.preventDefault();
       
     }*/
+   componentDidMount(){
+     return <h1>ss</h1>;
+   }
+    
       render(){
       //  <CategorieListe/>render(){
+    
        const marginTop = { marginTop:"20px"};
        return (
          
       // <div className="App"><Jumbotron className="bg-dark text-white"> </Jumbotron>
       <Router>
-        
-       <NavigationBar/><Container>
+            
+       <Container>
          <Row>
          <Col lg={12} style = {marginTop} ><Switch> 
-           
-           <Route path="/" exact component={Bienvenue}/> <Route path="/ajoutercategorie" exact component={Categorie}/><Route path="/categories" exact component={CategorieListe}/> 
+          
+           <Route path="/authadmin" exact component={connexionadmin}/>
+           <Route path="/" exact component={Bienvenue}/>
+           <Route path="/ajoutercategorie" exact component={Categorie}/>
+           <Route path="/categories" exact component={CategorieListe}/> 
            <Route path="/listedesmembres" exact component={PersonneListe}/>
            <Route path="/listedesclients" exact component={ClientListe}/>
            <Route path="/ajouterpersonne" exact component={personne}/>
            <Route path="/ajouterclient" exact component={Client}/>
+           <Route path="/connexionclient" exact component={Connexionclient}/>
+           <Route path="/connexionpersonne" exact component={connexionpersonne}/>
+           <Route path="/connexionadmin" exact component={connexionadmin}/>
+           <Route path="/echecconnexion" exact component={Echecconnexion}/>
+           <Route path="/afficher" exact component={afficherparcategorie}/>
+           <Route path="/lesservices" exact component={MenuPersonne}/>
+           <Route path="/ajouterservices" exact component={service}/>
+           <Route path="/modifierprofilmembre" exact component={modifiermembre}/>
+           <Route path="/modifierprofilclient" exact component={modifierclient}/>
            </Switch>
            </Col></Row></Container>
             
@@ -59,5 +87,3 @@ export default class App extends React.Component{
      
  }
   }
-
-
