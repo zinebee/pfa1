@@ -24,13 +24,15 @@ public Iterable<client> getClient(){
 	return clientrepo.findAll();
 }
 @RequestMapping(method=RequestMethod.DELETE,value="/clients/{id}")
-public void Supprimerclient(@PathVariable long id) {
+public String Supprimerclient(@PathVariable long id) {
 	clientservicee.Supprimerclient(id);
+	return "client supprime";
 }
 @RequestMapping(method=RequestMethod.POST,value="/clients/ajout")
-public void ajouterclient(@RequestBody client client1) {
+public String ajouterclient(@RequestBody client client1) {
 	//categorie1.setCategoriee(personne);
 	clientservicee.Ajouterclient(client1);
+	return "client ajoute";
 }
 @RequestMapping(method=RequestMethod.GET,value="/clients/{password}/{email}")
 public long  authentification(@PathVariable String password,@PathVariable String email) {
@@ -44,13 +46,14 @@ public long  authentification(@PathVariable String password,@PathVariable String
 	
 }
 @RequestMapping(method=RequestMethod.PUT,value="/clients/m/{id}")
-public void modifierpersonne(@RequestBody client client,@PathVariable long id ) {
+public String modifierclient(@RequestBody client client,@PathVariable long id ) {
 	
 	
 	clientservicee.Modifierclient(client,id);
+	return "client modifie";
 }
 @RequestMapping(method=RequestMethod.GET,value="/clients/{id}")
-public Optional<client> getpersonnebyid(@PathVariable long id){
+public Optional<client> getclientbyid(@PathVariable long id){
 	return clientrepo.findById(id);
 }
 }

@@ -31,7 +31,7 @@ public class personnecontroller {
 	    
 	}
 	@RequestMapping(method=RequestMethod.POST,value="/personnes/ajout")
-	public String ajoutercategorie(@RequestBody personne personne1) {
+	public String ajouterpersonne(@RequestBody personne personne1) {
 		//categorie1.setCategoriee(personne);
 		personneservicee.Ajouterpersonne(personne1);
 		return "Ajoute";
@@ -41,7 +41,7 @@ public class personnecontroller {
 		return personnerepo.findById(id);
 	}
 	@RequestMapping(method=RequestMethod.DELETE,value="/personnes/{id}")
-	public void Supprimercategorie(@PathVariable long id) {
+	public void Supprimerpersonne(@PathVariable long id) {
 		personneservicee.Supprimerpersonne(id);
 	}
 	@RequestMapping(method=RequestMethod.GET,value="/personnes/t/{categorie}")

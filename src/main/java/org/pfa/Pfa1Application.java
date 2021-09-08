@@ -30,7 +30,7 @@ private serviceRepo repository3;
 	@Bean
 	CommandLineRunner runner() {
 		return args->{
-			categorie a=new categorie("a");
+			/*categorie a=new categorie("a");
 			categorie b=new categorie("b");
 			categorie c=new categorie("c");
 			repository.save(a);
@@ -44,7 +44,7 @@ private serviceRepo repository3;
 			repository2.save(new client("zineb","mouna","0611111111","zineb_mouna@gmail.com"," "));
 			repository2.save(new client("zineb1","mouna1","0611111112","zineb_mouna1@gmail.com"," 1"));
 			repository2.save(new client("zineb2","mouna2","0611111113","zineb_mouna2@gmail.com"," 2"));
-			repository3.save(new service("a",1,"a","a","a",2,ss));
+			repository3.save(new service("a",1,"a","a","a",2,ss));*/
 			
 		};
 	}

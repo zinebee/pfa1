@@ -8,6 +8,8 @@ class Pfa1ApplicationTests {
 
 	@Test
 	void contextLoads() {
+		//categorietest h=new categorietest();
 	}
+	
 
 }
