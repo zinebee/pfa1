@@ -1,6 +1,9 @@
 package org.pfa.modele;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f29214bbd95f6a469e24fb130eeec284256653b
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -139,4 +142,8 @@ public class service {
 	}
 
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4f29214bbd95f6a469e24fb130eeec284256653b

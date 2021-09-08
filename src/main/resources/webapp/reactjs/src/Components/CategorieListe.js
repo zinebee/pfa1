@@ -14,6 +14,9 @@ export default class CategorieListe extends Component {
     }
     
     componentDidMount(){
+        if(sessionStorage.getItem("idadmin") ==null){
+            window.location="/connexionadmin";
+    }
         axios.get("http://localhost:8080/categories").then(response => response.data).then((data)=>{this.setState({categories:data})});
     }
     deleteCategorie=(categorieId) =>{
@@ -44,7 +47,7 @@ export default class CategorieListe extends Component {
            }
         })
    };
-    render() { 
+  render() { 
         //document.getElementById("etal").innerHTML="";
         return(
             <div>

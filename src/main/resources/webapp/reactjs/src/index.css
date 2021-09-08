@@ -232,3 +232,17 @@ text-align: center;
   .sous > li:hover > a {
     color: white;
   }
+  #espace{
+    
+    margin-bottom:90px;
+    
+  }
+  #imff{
+    float: right;
+  }
+  #colorer{
+     background-color: green;
+  }
+  #footere{
+    margin-top: 400px;
+  }

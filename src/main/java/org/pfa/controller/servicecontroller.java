@@ -68,4 +68,8 @@ public class servicecontroller {
 		public Iterable<service> chercherserviceparcategorie(@PathVariable int categorie) {
 			return serviceservice.ChercherserviceParCat(categorie);
 		}*/
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4f29214bbd95f6a469e24fb130eeec284256653b

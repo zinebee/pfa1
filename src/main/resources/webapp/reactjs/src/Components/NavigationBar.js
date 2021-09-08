@@ -34,6 +34,8 @@ class NavigationBar extends React.Component {
 	        	<li class="nav-item"><a href="listedesmembres" class="nav-link">Liste des  Membres</a></li>
 	          <li class="nav-item"><a href="listedesclients" class="nav-link">Liste des  Clients</a></li>
 			  
+			  <li class="nav-item"><a href="listeservicesadmin" class="nav-link">Liste des  Services</a></li>
+			
 	        </ul>
 	      </div>
 	    </div>

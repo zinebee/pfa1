@@ -1,5 +1,8 @@
 package org.pfa.service;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f29214bbd95f6a469e24fb130eeec284256653b
 import org.pfa.modele.personne;
 import org.pfa.modele.personneRepo;
 import org.pfa.modele.service;
@@ -46,4 +49,8 @@ public class serviceservice {
 	
 	
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4f29214bbd95f6a469e24fb130eeec284256653b

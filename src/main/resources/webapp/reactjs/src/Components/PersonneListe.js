@@ -14,6 +14,11 @@ export default class PersonneListe extends Component {
     }
     
     componentDidMount(){
+        
+            if(sessionStorage.getItem("idadmin") ==null){
+                    window.location="/connexionadmin";
+            }
+    
         axios.get("http://localhost:8080/personnes").then(response => response.data).then((data)=>{this.setState({personnes:data})});
     }
     deletePersonne=(personneId) =>{

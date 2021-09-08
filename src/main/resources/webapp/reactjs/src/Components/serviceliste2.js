@@ -104,4 +104,8 @@ export default class serviceliste2 extends Component {
                      </Table>
              </div>
         );
+<<<<<<< HEAD
             }}
+=======
+            }}
+>>>>>>> 4f29214bbd95f6a469e24fb130eeec284256653b

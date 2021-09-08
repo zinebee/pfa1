@@ -28,7 +28,7 @@ export default class connexionpersonne extends React.Component {
            if(response.data != 0 ){
                alert("connexion reussi");
                sessionStorage.setItem("idpersonne",response.data);
-               //alert(sessionStorage.getItem("idpersonne"));
+               //sessionStorage.getItem("idpersonne"));
                window.location="/lesservices";
            }else{
                alert("connexion echoue");
